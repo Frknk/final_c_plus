@@ -21,4 +21,57 @@ class Moto{
         kilometraje = _kilometraje;
         precio = _precio;
     }
+
+    // Getters
+
+    string getCodigo(){
+        return codigo;
+    }
+
+    string getMarca(){
+        return marca;
+    }
+
+    string getModelo(){
+        return modelo;
+    }
+
+    string getColor(){
+        return color;
+    }
+
+    string getAnoFabricacion(){
+        return ano_fabricacion;
+    }
+
+    string getCc(){
+        return cc;
+    }
+
+    int getKilometraje(){
+        return kilometraje;
+    }
+
+    int getPrecio(){
+        return precio;
+    }
+
+    // Setters
+
+    void setPrecio(int _precio){
+        precio = _precio;
+    }
+
+    void setKilometraje(int _kilometraje){
+        kilometraje = _kilometraje;
+    }
+
+    void setCodigo(string _codigo){
+        codigo = _codigo;
+    }
+
+    void setMarca(string _marca){
+        marca = _marca;
+    }
+
 };

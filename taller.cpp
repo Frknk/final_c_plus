@@ -54,6 +54,8 @@ public:
     vector<Empleado> lista_empleados; // Arreglo dinamico
     vector<Repuesto> lista_repuestos; // Arreglo dinamico
 
+    ofstream ventas;
+
     // Metodos
     void getClientes(){
         for (int i = 0; i < lista_clientes.size(); i++)
@@ -113,7 +115,18 @@ public:
             }
         }
 
+        // Guardando en el historial de ventas
+        ventas.open("ventas.txt", ios::app);
+        ventas << "Cliente: " << dni << endl;
+        ventas << "Empleado: " << empleado.getApellido() << " " << empleado.getNombre() <<endl;
+        ventas << "Servicio: " << servicio.getServicio() << endl;
+        ventas << "Precio: " << servicio.getPrecio() << endl;
+        ventas << "Tiempo: " << servicio.getTiempo() << endl;
+        ventas << "Fecha: " << "12/12/2020" << endl;
+        ventas << "Codigo Repuesto: " << codigo_repuesto << endl;
+        ventas << "----------------------------------" << endl;
 
+        ventas.close();
     }
 
     void obtenerServiciosPopulares()

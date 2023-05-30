@@ -180,6 +180,7 @@ public:
             reporte.close();
             break;
 
+
         default:
             cout << "Opcion no valida" << endl;
             break;
