@@ -1,0 +1,20 @@
+Reporte de repuestos ordenados por stock: 
+Codigo: R003
+Descripcion: Deposito Combustible 1
+Fecha de registro: 01/01/2021
+Precio: 300
+Stock: 30
+Categoria: Cuadro
+Codigo: R002
+Descripcion: Suspension Tipo 1
+Fecha de registro: 01/01/2021
+Precio: 200
+Stock: 20
+Categoria: Suspension
+Codigo: R001
+Descripcion: Llanta Negra 1
+Fecha de registro: 01/01/2021
+Precio: 100
+Stock: 10
+Categoria: Llantas
+

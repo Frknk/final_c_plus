@@ -1,75 +1,164 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include "empleado.cpp"
+#include "repuesto.cpp"
+#include "cliente.cpp"
 
 using namespace std;
 
-class Taller
+
+
+class Servicio
 {
 protected:
-    // Obtienendo todos los datos en arreglos para hacer mas facil las estadisticas
-
     // Atributos
-    vector<string> lista_servicios; // Arreglo dinamico
-    vector<int> contador_servicios; // Arreglo dinamico
-    vector<int> tiempo_servicios;   // Arreglo dinamico
-    vector<int> ganancia;           // Arreglo dinamico
+    string servicio;
+    int precio, tiempo, costo;
 
     // Metodos
 public:
-    /*void realizarTrabajo()
+    // Constructor
+    Servicio(string _servicio, int _precio, int _tiempo)
     {
-        cout << "*** Realizar un nuevo trabajo ***" << endl;
-        cout << "1. Cambio de aceite | $5 | 5 min" << endl;
-        cout << "2. Cambio de llantas | $25 | 20 min" << endl;
-        cout << "3. Cambio de frenos | $30 | 20 min" << endl;
-        cout << "4. Cambio de amortiguadores | $60 | 45 min" << endl;
-        cout << "5. Cambio de bateria | $50 | 30 min" << endl;
-        cout << "6. Cambio de bujias | $10 | 10 min" << endl;
-        cout << "7. Cambio de filtro de aire | $5 | 5 min" << endl;
-        cout << "8. Cambio de filtro de aceite | $5 | 5 min" << endl;
-        cout << "9. Cambio de filtro de gasolina | $5 | 5 min" << endl;
-        cout << "10. Cambio de direccionales | $25 | 25 min" << endl;
-    }*/
+        servicio = _servicio;
+        precio = _precio;
+        tiempo = _tiempo;
+    }
 
-    void agregarServicio(string servicio, int tiempo, int costo)
+    string getServicio()
+    {
+        return servicio;
+    }
+
+    int getTiempo()
+    {
+        return tiempo;
+    }
+
+    int getPrecio()
+    {
+        return precio;
+    }
+};
+
+
+class Taller
+{
+public:
+    // Obtienendo todos los datos en arreglos para hacer mas facil las estadisticas
+
+    // Atributos
+    vector<Servicio> lista_servicios; // Arreglo dinamico
+    vector<Cliente> lista_clientes;   // Arreglo dinamico
+    vector<Empleado> lista_empleados; // Arreglo dinamico
+    vector<Repuesto> lista_repuestos; // Arreglo dinamico
+
+    // Metodos
+    void getClientes(){
+        for (int i = 0; i < lista_clientes.size(); i++)
+        {
+            cout << lista_clientes[i].getApellidoNombre() << lista_clientes[i].getNroServicios() << endl;
+        }
+    }
+
+    string getClientesString(){
+        string clientes = "";
+        for (int i = 0; i < lista_clientes.size(); i++)
+        {
+            clientes += lista_clientes[i].getApellidoNombre() + " Servicios: " + to_string(lista_clientes[i].getNroServicios()) + "\n";
+            clientes += lista_clientes[i].getServicios() + "\n";
+        }
+        return clientes;
+    }
+
+    void getRepuestos(){
+        for (int i = 0; i < lista_repuestos.size(); i++)
+        {
+            cout << lista_repuestos[i].getDescripcion() << lista_repuestos[i].getPrecio() << lista_repuestos[i].getStock() << endl;
+        }
+    }
+
+    void agregarCliente(Cliente cliente)
+    {
+        lista_clientes.push_back(cliente); // Agrega un elemento al arreglo
+    }
+
+    void agregarServicio(Servicio servicio, Empleado empleado, string dni, string codigo_repuesto)
     {
         lista_servicios.push_back(servicio); // Agregar servicio al arreglo
-        tiempo_servicios.push_back(tiempo);  // Agregar tiempo al arreglo
-        ganancia.push_back(costo);           // Agregar costo al arreglo
+        lista_empleados.push_back(empleado); // Agregar empleado al arreglo
+        
+        cout << "El servicio se ha agregado correctamente" << endl;
+
+        // Actualizando nro servicios cliente
+        for (int i = 0; i < lista_clientes.size(); i++)
+        {
+            if (lista_clientes[i].getDni() == dni)
+            {
+                lista_clientes[i].setServicio(servicio.getServicio());
+                cout << "El numero de servicios del cliente se ha actualizado correctamente" << endl;
+                break;
+            }
+        }
+
+        // Actualizando el stock de los repuestosa
+        for (int i = 0; i < lista_repuestos.size(); i++)
+        {
+            if (lista_repuestos[i].getCodigo() == codigo_repuesto)
+            {
+                lista_repuestos[i].setStock(lista_repuestos[i].getStock() - 1);
+                cout << "El stock del repuesto se ha actualizado correctamente" << endl;
+                break;
+            }
+        }
+
+
     }
 
     void obtenerServiciosPopulares()
     {
-        int mayor = 0; // Variable para guardar el mayor
-        int posicion = 0; // Variable para guardar la posicion del mayor 
-        for (int i = 0; i < contador_servicios.size(); i++) // Recorriendo el arreglo
+        // string mas_repite = ""; // Variable para guardar el que mas se repite
+        int posicion = 0;                                // Variable para guardar la posicion del que mas se repite
+        int aux = 0;                                     // Variable auxiliar para guardar el numero de veces que se repite
+        for (int i = 0; i < lista_servicios.size(); i++) // Recorriendo el arreglo
         {
-            if (contador_servicios[i] > mayor) // Comparando si el elemento es mayor que la variable mayor
+            int contador = 0;
+            for (int j = 0; j < lista_servicios.size(); j++)
             {
-                mayor = contador_servicios[i]; // Guardando el mayor
-                posicion = i; // Guardando la posicion del mayor
+                if (lista_servicios[i].getServicio() == lista_servicios[j].getServicio())
+                {
+                    contador++;
+                }
+            }
+            if (contador > aux)
+            {
+                aux = contador;
+                // mas_repite = lista_servicios[i];
+                posicion = i;
             }
         }
-        cout << "El servicio mas popular es: " << lista_servicios[posicion] << endl;
-        cout << "El tiempo que tarda el servicio es: " << tiempo_servicios[posicion] << " minutos" << endl;
+        cout << "El servicio mas popular es: " << lista_servicios[posicion].getServicio() << endl;
+        cout << "El tiempo que tarda el servicio es: " << lista_servicios[posicion].getTiempo() << " minutos" << endl;
+        cout << "Por un valor de: " << lista_servicios[posicion].getPrecio() << " soles" << endl;
     }
 
     int obtenerGananciaTotal()
     {
-        int total = 0; // Variable para guardar el total
-        for (int i = 0; i < ganancia.size(); i++) // Recorriendo el arreglo
+        int total = 0;                                   // Variable para guardar el total
+        for (int i = 0; i < lista_servicios.size(); i++) // Recorriendo el arreglo
         {
-            total += ganancia[i]; // Sumando los elementos del arreglo
+            total += lista_servicios[i].getPrecio(); // Sumando los elementos del arreglo
         }
         return total; // Retornando el total
     }
 
     int obtenerTiempoTotal()
     {
-        int total = 0; // Variable para guardar el total
-        for (int i = 0; i < tiempo_servicios.size(); i++) // Recorriendo el arreglo
+        int total = 0;                                   // Variable para guardar el total
+        for (int i = 0; i < lista_servicios.size(); i++) // Recorriendo el arreglo
         {
-            total += tiempo_servicios[i]; // Sumando los elementos del arreglo
+            total += lista_servicios[i].getTiempo(); // Sumando los elementos del arreglo
         }
         return total; // Retornando el total
     }
