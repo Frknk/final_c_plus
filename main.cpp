@@ -14,7 +14,7 @@ int main()
     tienda.agregarCliente(cliente_c);
     tienda.agregarCliente(cliente_d);
 
-    Empleado empleado1("E001", "Juan", "Perez");    
+    Empleado empleado1("E001", "Juan", "Perez");
 
     Repuesto repuesto1("R001", "Llanta Negra 1", "01/01/2021", 100, 10, "Llantas");
     Repuesto repuesto2("R002", "Suspension Tipo 1", "01/01/2021", 200, 20, "Suspension");
@@ -36,10 +36,11 @@ int main()
     especializado.agregarServicio(servicio2, empleado1, "54321", "R002");
     cliente_d.setServicio("Cambio de suspension");
 
-
     tienda.agregarRepuesto(repuesto1);
     tienda.agregarRepuesto(repuesto2);
     tienda.agregarRepuesto(repuesto3);
+
+    string clientess = "";
 
     int opcion;
     do

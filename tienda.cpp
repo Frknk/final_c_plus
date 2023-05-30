@@ -204,6 +204,7 @@ public:
         cout << "Reporte generado!" << endl;
         reporte.open("clientes.txt");
         reporte << getClientesString();
+        reporte << "Total de clientes: " << lista_clientes.size() << endl;
         reporte.close();
         
     }

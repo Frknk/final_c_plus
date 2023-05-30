@@ -1,0 +1,160 @@
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 54321
+Empleado: E001 Juan
+Servicio: Cambio de suspension
+Precio: 30
+Tiempo: 45
+Fecha: 12/12/2020
+Codigo Repuesto: R002
+----------------------------------
+Cliente: 54321
+Empleado: E001 Juan
+Servicio: Cambio de suspension
+Precio: 30
+Tiempo: 45
+Fecha: 12/12/2020
+Codigo Repuesto: R002
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 54321
+Empleado: E001 Juan
+Servicio: Cambio de suspension
+Precio: 30
+Tiempo: 45
+Fecha: 12/12/2020
+Codigo Repuesto: R002
+----------------------------------
+Cliente: 54321
+Empleado: E001 Juan
+Servicio: Cambio de suspension
+Precio: 30
+Tiempo: 45
+Fecha: 12/12/2020
+Codigo Repuesto: R002
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 54321
+Empleado: E001 Juan
+Servicio: Cambio de suspension
+Precio: 30
+Tiempo: 45
+Fecha: 12/12/2020
+Codigo Repuesto: R002
+----------------------------------
+Cliente: 54321
+Empleado: E001 Juan
+Servicio: Cambio de suspension
+Precio: 30
+Tiempo: 45
+Fecha: 12/12/2020
+Codigo Repuesto: R002
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 12345
+Empleado: E001 Juan
+Servicio: Cambio de llanta
+Precio: 5
+Tiempo: 15
+Fecha: 12/12/2020
+Codigo Repuesto: R001
+----------------------------------
+Cliente: 54321
+Empleado: E001 Juan
+Servicio: Cambio de suspension
+Precio: 30
+Tiempo: 45
+Fecha: 12/12/2020
+Codigo Repuesto: R002
+----------------------------------
+Cliente: 54321
+Empleado: E001 Juan
+Servicio: Cambio de suspension
+Precio: 30
+Tiempo: 45
+Fecha: 12/12/2020
+Codigo Repuesto: R002
+----------------------------------
