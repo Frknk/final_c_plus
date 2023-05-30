@@ -64,6 +64,8 @@ public:
         }
     }
 
+    
+
     string getDatosArreglo(){
         string datos = "";
         for (int i = 0; i < lista_repuestos.size(); i++)
@@ -198,14 +200,10 @@ public:
         }
 
         // Imprimir el arreglo
-        cout << "Los clientes mas comunes son: " << endl;
-        cout << getClientesString();
-        cout << lista_repuestos[0].getCodigo() << endl; 
-        // cout << lista_clientes[0].getApellidoNombre() << endl;
-        /* for (int i = 0; i < lista_clientes.size(); i++){
-            cout << lista_clientes[i].getApellidoNombre() << endl;
-            // cout << lista_clientes[i].getListaServicio() << endl;
-        }*/
+        cout << "Reporte generado!" << endl;
+        reporte.open("clientes.txt");
+        reporte << getClientesString();
+        reporte.close();
         
     }
 };
