@@ -29,4 +29,19 @@ class Empleado{
         return codigo;
     }
 
+    // Setters
+    void setApellido(string _apellido){
+        apellido = _apellido;
+    }
+
+    void setNombre(string _nombre){
+        nombre = _nombre;
+    }
+
+    void setCodigo(string _codigo){
+        codigo = _codigo;
+    }
+
+    
+
 };
